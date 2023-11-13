@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    max-height: 100%;
+}
+.contener {
+    display: grid;
+    grid-gap: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 20px;
+
+}
+.table {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+
+
+}
+
+td {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+}
+ul {
+
+    list-style: none;
+}
+.search {
+    display: flex;
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr;
+    justify-content: stretch;
+    gap: 10px;
+}
+.search input {
+    border: 1px solid red;
+}
+.show{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+dialog{
+    border: unset;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 30px;
+    min-width: 400px;
+}
+.form {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+}
+.form input {
+    max-width: 400px;
+    min-height: 30px;
+    border: unset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.form select{
+    max-width: 300px;
+    min-height: 30px;
+    border: unset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin-top: 15px;
+}
+.form .add {
+    max-width: 400px;
+    min-height: 30px;
+    border: unset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin-top: 15px;
+}
+.add button {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+button::after{
+    width: 10px;
+    background-color: black;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+
+}
+h3 {
+    text-align: center;
+}
+.close {
+    max-height: 20px;
+    align-self: center;
+}
+.add {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap:5px;
+}

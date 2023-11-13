@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Library</title>
+</head>
+<body>
+    <div class="contener">
+        <div class="head">
+            <h1>My Library</h1>
+            <div class="boos_record">
+                <ul>
+                    <li>Total Book</li>
+                    <li>reded books</li>
+                    <li>Total pages</li>
+                </ul>
+            </div>
+        </div>
+        <div class="search">
+            <form class="search">
+                <label for="name">search by name</label>
+                <input type="search" id="name">
+                <label for="name">search by author</label>
+                <input type="search" id="name">
+                <button type="submit" class="searchit">search</button>
+            </form>
+        </div>
+        <table class="table">
+            <tr>
+                <td>Title</td>
+                <td>Author</td>
+                <td>published Date</td>
+                <td>Pages</td>
+                <td>read it</td>
+                <td><button>Delate</button></td>
+            </tr>
+        </table>
+
+        <div class="show">
+            <button class="button" id="but">Add Book</button>
+        </div>
+    </div>
+    <div class="dialog">
+        <dialog class="main" id="close_1">
+            <div class="top">
+                <h3>Add Book</h3>
+                <button id="close" class="close">Close</button>
+            </div>
+            <form class="form" id="form">
+                <label for="book">Titel of the Book</label>
+                    <input class="book_name" id="book" required>
+                <label for="author">Author</label>
+                    <input type="text" id="author" required>
+                <label for="date">Pulshing Date</label>
+                    <input type="date" id="date">
+                <select name="read" id="">
+                    <option value="null">Do you read it ?</option>
+                    <option value="1">yes I have read it</option>
+                    <option value="0">No I didnt</option>
+                </select>
+                <label for="page">How many pages do you read</label>
+                    <input type="number" id="page" required>
+                <div class="add">
+                    <button type="submit">Add</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </form>
+        </dialog>
+    </div>
+    <script>
+        const myLiberery = [];
+        function Book(title, author, date, page, read) {
+            this.title = title;
+            this.author = author;
+            this.date = date;
+            this.page = page;
+            this.read = read;
+            this.myLibererylist = function(){
+                myLiberery.push([title, author, date, page, read])
+            };
+        };
+        const chiled = function displaybook(){
+            const table = '';
+            myLiberery.forEach(function(book){
+                table += `<td>"${book}</td>`
+            });
+            return table;
+        };
+        const dilaogElemnt = document.querySelector("dialog");
+        const showbutton = document.getElementById("but");
+        const close = document.getElementById('close')
+
+        showbutton.addEventListener("click", ()=>{
+
+            dilaogElemnt.showModal();
+        });
+
+        close.addEventListener("click", ()=>{
+            close_1.close()
+        });
+        const ch = `<tr>"${chiled}"</tr>`;
+
+        const form = document.getElementById('form');
+        const submit = document.getElementById('add');
+        const tablch = document.querySelector('table');
+        form.addEventListener('submit', (ev)=>{
+            ev.preventDefault();
+            const formValue = form.elements
+            const book = new Book(formValue[0].value, formValue[1].value, formValue[2].value,
+            formValue[3].value, formValue[4].value);
+            book.myLibererylist();
+            console.log(myLiberery);
+            tablch.appendChild(ch);
+        });
+    </script>
+</body>
+</html>
